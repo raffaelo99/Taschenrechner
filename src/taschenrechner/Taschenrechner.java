@@ -58,7 +58,10 @@ private static double zw;
                         erg = rech.rechne(x, y); break;
                 case ":":
                         rech = new Dividiere();
-                        erg = rech.rechne(x, y); break;                         
+                        erg = rech.rechne(x, y); break;
+                    case "^":
+                        rech = new Potenzieren();
+                        erg = rech.rechne(x, y); break;    
             }
             
                 zwischenErgebnis(y, erg);
@@ -69,6 +72,9 @@ private static double zw;
                 case ":":
                         rech = new Dividiere();
                         erg = rech.rechne(zw, z); break;
+                    case "^":
+                        rech = new Potenzieren();
+                        erg = rech.rechne(x, y); break;   
             }
             
 
