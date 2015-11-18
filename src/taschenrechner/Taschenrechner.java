@@ -17,6 +17,7 @@ private static Scanner scan;
 private static boolean stop;
 private static Rechner rech;
 private static Ausgabe aus;
+private static DBAnbindung db1;
 
 private static double zw;
     /**
@@ -26,7 +27,7 @@ private static double zw;
         // TODO code application logic here
         scan = new Scanner(System.in);
         aus = new CMD();
-        
+        db1 = new MYSQL_DB();
         stop = false;
         
         while(stop == false){
@@ -49,6 +50,7 @@ private static double zw;
         System.out.println("Dritte Zahl: ");
         double z = scan.nextDouble(); 
 
+        db1.berechnungHinzufuegen(x,y,z,op1,op2);
         //String eingabe = scan.next();
         
         //berechne.berechne(eingabe);
@@ -109,6 +111,7 @@ private static double zw;
             stop = true;
          }
         }
+        
     }
     
     public static double zwischenErgebnis(double y, double erg){
@@ -120,6 +123,7 @@ private static double zw;
             }
         return zw;
     }
+    
     
 }
 
